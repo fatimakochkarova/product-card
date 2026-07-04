@@ -1,0 +1,19 @@
+.compound {
+  margin-top: 20px;
+}
+
+
+.compound__list {
+  margin: 0;
+  padding-left: 14px;
+}
+
+.card__compound.compound {
+  text-align: left;
+  margin-top: 20px;
+} 
+
+.compound__name {
+  display: block;
+  margin-bottom: 6px;
+}
