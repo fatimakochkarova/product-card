@@ -32,7 +32,6 @@ console.log( comComments);
 
 //8.Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
 
-import { socialComments } from './comments.js';
 
 const updatedComments = socialComments.map(comment => {
   return {
@@ -45,7 +44,6 @@ console.log(updatedComments);
 
 //9.Перебрать массив, что бы объекты состояли только из айди и имени
 
-import { socialComments } from './comments.js';
 
 const shortenedComments = socialComments.map(comment => {
   return {
@@ -60,8 +58,6 @@ console.log(shortenedComments);
 
 //10.Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
 
-import { socialComments } from './comments.js';
-
 const validatedComments = socialComments.map(comment => {
   return {
     ...comment, 
@@ -73,7 +69,7 @@ console.log(validatedComments);
 
 //11.Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
 
-import { socialComments } from './comments.js';
+
 const emailsWithMap = socialComments.map(comment => comment.email);
 console.log(emailsWithMap);
 
@@ -88,8 +84,6 @@ const emailsWithReduce = socialComments.reduce((accumulator, comment) => {
 console.log(emailsWithReduce);
 
 //12.Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
-
-import { socialComments } from './comments.js';
 
 const emailsArray = socialComments.map(comment => comment.email);
 const stringViaToString = emailsArray.toString();
