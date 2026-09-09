@@ -1,37 +1,38 @@
 const footerForm = document.querySelector('.footer__form');
 const footerInput = document.querySelector('.footer__input');
- 
+
+
+const openModalBtn = document.querySelector('.register-btn');
+const closeModalBtn = document.querySelector('.modal__close-btn');
+const modalOverlay = document.querySelector('.overlay.modal'); 
+
+const registerForm = document.querySelector('.modal__form');
+const nameInput = document.getElementById('reg-name');
+const surnameInput = document.getElementById('reg-surname');
+const birthDateInput = document.getElementById('reg-birth');
+const loginInput = document.getElementById('reg-login');
+const passwordInput = document.getElementById('reg-password');
+const passwordConfirmInput = document.getElementById('reg-password-confirm');
+
+let user = null; 
+
+
 footerForm.addEventListener('submit', function (event) {
   event.preventDefault(); 
  
-  
   if (!footerForm.checkValidity()) {
-    footerInput.reportValidity();
+    footerForm.reportValidity();
     return;
   }
  
   const emailValue = footerInput.value.trim();
- 
-  const result = {
-    email: emailValue
-  };
+  const result = { email: emailValue };
  
   console.log(result);
- 
   footerForm.reset();
 });
- 
 
-let user = null; 
- 
-const openModalBtn = document.querySelector('.register-btn');
-const closeModalBtn = document.querySelector('.modal__close-btn');
-const modalOverlay = document.querySelector('.modal');
-const registerForm = document.querySelector('.modal__form');
- 
-const passwordInput = document.getElementById('reg-password');
-const passwordConfirmInput = document.getElementById('reg-password-confirm');
- 
+
 
 openModalBtn.addEventListener('click', () => {
   modalOverlay.classList.add('modal-showed');
@@ -58,29 +59,33 @@ document.addEventListener('keydown', (event) => {
     closeModal();
   }
 });
- 
+
 
 registerForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
 
-  
+ 
   if (!registerForm.checkValidity()) {
     registerForm.reportValidity();
-    alert('Регистрация отклонена: заполните все поля корректно.');
+    console.log('Регистрация отклонена: заполните все поля корректно.');
     return;
   }
  
+ 
+  const name = nameInput.value.trim();
+  const surname = surnameInput.value.trim();
+  const birthDate = birthDateInput.value;
+  const login = loginInput.value.trim();
+  const password = passwordInput.value;
+  const passwordConfirm = passwordConfirmInput.value;
+
   
-  if (passwordInput.value !== passwordConfirmInput.value) {
-    alert('Регистрация отклонена: пароли не совпадают!');
+  if (password !== passwordConfirm) {
+    alert('Ошибка: Пароли не совпадают! Пожалуйста, повторите ввод.');
+    console.log('Регистрация отклонена: пароли не совпадают!');
+    passwordConfirmInput.focus();
     return;
   }
- 
-  
-  const name = document.getElementById('reg-name').value.trim();
-  const surname = document.getElementById('reg-surname').value.trim();
-  const birthDate = document.getElementById('reg-birth').value;
-  const login = document.getElementById('reg-login').value.trim();
  
   
   user = {
@@ -88,13 +93,10 @@ registerForm.addEventListener('submit', (event) => {
     surname: surname,
     birthDate: birthDate,
     login: login,
-    password: passwordInput.value,
-    createdOn: new Date() 
+    password: '*'.repeat(password.length) 
   };
- 
-  
+
   console.log('Успешная регистрация:', user);
- 
   
   closeModal();
 });

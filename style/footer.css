@@ -212,12 +212,8 @@ input{
   z-index: 1000;
 }
  
-.modal.modal-showed{
+.modal.modal-showed {
   display: block;
-}
- 
-
-.modal.modal-showed{
   animation: overlayFadeIn .25s ease forwards;
 }
  
@@ -242,19 +238,23 @@ input{
   max-height: 90vh;
   overflow-y: auto;
   
+  opacity: 0;
   animation: modalPopUp .3s ease forwards;
 }
  
 @keyframes modalPopUp{
   from{
     opacity: 0;
-    transform: translate(-50%, -42%);
+    
+    transform: translate(-50%, -45%); 
   }
   to{
     opacity: 1;
-    transform: translate(-50%, -50%);
+    
+    transform: translate(-50%, -50%); 
   }
 }
+
  
 .modal__close-btn{
   position: absolute;
