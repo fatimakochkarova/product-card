@@ -4,7 +4,7 @@ const footerInput = document.querySelector('.footer__input');
 
 const openModalBtn = document.querySelector('.register-btn');
 const closeModalBtn = document.querySelector('.modal__close-btn');
-const modalOverlay = document.querySelector('.overlay.modal'); 
+const modalOverlay = document.querySelector('.modal__overlay'); 
 
 const registerForm = document.querySelector('.modal__form');
 const nameInput = document.getElementById('reg-name');
@@ -41,7 +41,6 @@ openModalBtn.addEventListener('click', () => {
 
 const closeModal = () => {
   modalOverlay.classList.remove('modal-showed');
-  registerForm.reset();
 };
  
 closeModalBtn.addEventListener('click', closeModal);
@@ -97,6 +96,6 @@ registerForm.addEventListener('submit', (event) => {
   };
 
   console.log('Успешная регистрация:', user);
-  
+ registerForm.reset(); 
   closeModal();
 });

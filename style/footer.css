@@ -201,7 +201,8 @@ input{
   font-size: 14px;
 }
  
-.modal{
+.modal,
+.modal__overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -212,10 +213,12 @@ input{
   z-index: 1000;
 }
  
-.modal.modal-showed {
+.modal.modal-showed,
+.modal__overlay.modal-showed {
   display: block;
   animation: overlayFadeIn .25s ease forwards;
 }
+
  
 @keyframes overlayFadeIn{
   from{ background-color: rgba(0, 0, 0, 0); }
