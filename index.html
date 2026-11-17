@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="style/product.css">
   <link rel="stylesheet" href="style/header.css">
   <link rel="stylesheet" href="style/footer.css">
-<body>
 </head> 
+<body>
   <header class="header">
     <div class="container header__container">
       <a href="/" class="header__logo">Diamaint</a>
@@ -211,7 +211,7 @@
 
 </footer> 
 
-<div class="modal modal__overlay">
+<div id="registration-modal" class="modal modal__overlay">
   <div class="modal__window">
    
     <button class="modal__close-btn" type="button">&times;</button>
@@ -219,46 +219,42 @@
     <h2 class="modal__title">Регистрация</h2>
    
     <form class="modal__form" id="registration-form">
-      <div class="form-group">
-        <label for="reg-name">Имя:</label>
-        <input type="text" id="reg-name" placeholder="Иван" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-name">Имя:</label>
+    <input type="text" id="reg-name" name="name" placeholder="Иван" required>
+  </div>
 
-      <div class="form-group">
-        <label for="reg-surname">Фамилия:</label>
-        <input type="text" id="reg-surname" placeholder="Иванов" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-surname">Фамилия:</label>
+    <input type="text" id="reg-surname" name="surname" placeholder="Иванов" required>
+  </div>
 
-      <div class="form-group">
-        <label for="reg-birth">Дата рождения:</label>
-        <input type="date" id="reg-birth" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-birth">Дата рождения:</label>
+    <input type="date" id="reg-birth" name="birthDate" required>
+  </div>
 
-      <div class="form-group">
-        <label for="reg-login">Логин:</label>
-        <input type="text" id="reg-login" placeholder="ivan_ivanov" minlength="4" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-login">Логин:</label>
+    <input type="text" id="reg-login" name="login" placeholder="ivan_ivanov" minlength="4" required>
+  </div>
 
-      <div class="form-group">
-        <label for="reg-password">Пароль:</label>
-        <input type="password" id="reg-password" placeholder="Мин. 6 символов" minlength="6" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-password">Пароль:</label>
+    <input type="password" id="reg-password" name="password" placeholder="Мин. 6 символов" minlength="6" required>
+  </div>
 
-      <div class="form-group">
-        <label for="reg-password-confirm">Повторите пароль:</label>
-        <input type="password" id="reg-password-confirm" placeholder="Повторите пароль" required>
-      </div>
+  <div class="form-group">
+    <label for="reg-password-confirm">Повторите пароль:</label>
+    <input type="password" id="reg-password-confirm" name="passwordConfirm" placeholder="Повторите пароль" required>
+  </div>
 
-      <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
+  <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
     </form>
   </div>
 </div>
 
-<script src="main.js"></script>
-<script src="homework-8.js"></script>
-<script type="module" src="homework-9.js"></script>
-<script type="module" src="homework-10.js"></script>
-<script type="module" src="homework-11.js"></script>
+<script type="module" src="./main.js"></script>
 </body>
 </html>
 
